@@ -1,0 +1,188 @@
+/* =========================================================================
+   AGRIHYDRA ANDROID APP DOWNLOAD CTA
+   Isolated CSS Namespace: .agrihydra-app-download
+   ========================================================================= */
+
+.agrihydra-app-download {
+  position: fixed;
+  right: 24px;
+  bottom: 104px; /* Positioned above chatbot widget at bottom:24px (64px launcher + 16px gap) */
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #0A6B47 0%, #052E22 60%, #041c33 100%);
+  border: 1.5px solid rgba(15, 169, 104, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 14px 34px -10px rgba(15, 169, 104, 0.5), 0 8px 20px -8px rgba(9, 32, 52, 0.4);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.35s ease,
+              border-color 0.35s ease,
+              padding 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  isolation: isolate;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  max-width: calc(100vw - 32px);
+}
+
+.agrihydra-app-download:hover,
+.agrihydra-app-download:focus-visible {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, #0FA968 0%, #0A6B47 50%, #154BC7 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 42px -10px rgba(15, 169, 104, 0.7), 0 10px 24px -8px rgba(47, 123, 245, 0.4);
+  padding-right: 20px;
+}
+
+.agrihydra-app-download:focus-visible {
+  outline: 3px solid #F5A524;
+  outline-offset: 3px;
+}
+
+.agrihydra-app-download:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.agrihydra-app-download__icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0FA968 0%, #2F7BF5 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px -6px rgba(15, 169, 104, 0.6);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.agrihydra-app-download:hover .agrihydra-app-download__icon-badge {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.agrihydra-app-download__phone-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  stroke-width: 2;
+  fill: none;
+}
+
+.agrihydra-app-download__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.agrihydra-app-download__primary-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.agrihydra-app-download__full-label {
+  display: none;
+}
+
+.agrihydra-app-download:hover .agrihydra-app-download__short-label {
+  display: none;
+}
+
+.agrihydra-app-download:hover .agrihydra-app-download__full-label {
+  display: inline;
+}
+
+.agrihydra-app-download__sub-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #8fe3b0;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.agrihydra-app-download__tag {
+  background: rgba(245, 165, 36, 0.2);
+  border: 1px solid rgba(245, 165, 36, 0.5);
+  color: #F5A524;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  margin-left: 2px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.agrihydra-app-download:hover .agrihydra-app-download__tag {
+  background: #F5A524;
+  color: #361f00;
+  border-color: #F5A524;
+}
+
+/* Entrance animation */
+@keyframes agrihydraCtaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.agrihydra-app-download {
+  animation: agrihydraCtaFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 640px) {
+  .agrihydra-app-download {
+    right: 12px;
+    bottom: 88px; /* Positioned above chatbot which sits at bottom:12px (64px + 12px gap) */
+    padding: 7px 14px 7px 7px;
+    gap: 8px;
+    min-height: 46px; /* Touch target >= 44px */
+  }
+
+  .agrihydra-app-download__icon-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .agrihydra-app-download__phone-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .agrihydra-app-download__primary-text {
+    font-size: 12.5px;
+  }
+
+  .agrihydra-app-download__sub-label {
+    font-size: 10px;
+  }
+
+  /* On mobile touch screens keep standard readable label without layout jump */
+  .agrihydra-app-download:hover .agrihydra-app-download__short-label {
+    display: inline;
+  }
+  .agrihydra-app-download:hover .agrihydra-app-download__full-label {
+    display: none;
+  }
+}
